@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OS Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width: 500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://github.com/Anupam96786/OS-cheat-sheet" class="github-corner" target="_blank"
+        aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250"
+            style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a>
+
+    <div class="container-md p-2">
+        <div class="row my-3">
+            <h1 class="text-center">
+                OS Cheat Sheet
+            </h1>
+        </div>
+    </div>
+
+    <div class="container-md p-2">
+        <div class="row">
+            <div class="accordion" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-1" aria-expanded="false">
+                            Basic Linux Commands
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-1" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/basic-commands.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/file-system-commands.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3 d-flex justify-content-center">
+                                <img src="./images/working-with-file-commands.png" class="img-fluid" alt="..."
+                                    srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/searching-for-file-commands.png" class="img-fluid" alt="..."
+                                    srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/informational-commands.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/system-admin-commands.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+
+                            <div class="container-sm p-0 my-3">
+                                <img src="./images/other-util-commands.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+
+                            <div class="container border border-dark py-3 mb-3">
+                                <h3>
+                                    <strong>grep</strong> Commands
+                                </h3>
+                                <hr>
+                                <p class="mt-4">
+                                    Consider the file <strong>grepText.txt</strong> containing the following lines:
+                                </p>
+                                <p>
+                                <pre>
+I saw a lame man
+in a lane
+close to my door.
+                                </pre>
+                                </p>
+
+                                <ul class="list-group">
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            Displays the line containing the pattern <strong>lan</strong>
+                                        </p>
+                                        <code>
+grep "lan" grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+in a lane
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            Displays the line containing the pattern <strong>LAne</strong> ignoring case
+                                        </p>
+                                        <code>
+grep -i “LAne” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+in a lane
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            Displays number of lines containing the pattern <strong>a</strong>
+                                        </p>
+                                        <code>
+grep -c “a” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+2
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            Matches whole word only
+                                        </p>
+                                        <code>
+grep -w “clo” grepText.txt
+                                </code>
+                                        <p><i>displays nothing</i></p>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            matches whole word only
+                                        </p>
+                                        <code>
+grep -w “close” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+close to my door.
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays only the word
+                                        </p>
+                                        <code>
+grep -o “close” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+close
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays matched line along with line number
+                                        </p>
+                                        <code>
+grep -n “close” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+3:close to my door.
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays unmatched limes
+                                        </p>
+                                        <code>
+grep -v “close” grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+I saw a lame man
+in a lane
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays matched line that begins with the given pattern
+                                        </p>
+                                        <code>
+grep "^close" grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+close to my door.
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays matched line that ends with the given pattern
+                                        </p>
+                                        <code>
+grep "man$" grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+I saw a lame man
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            matching multiple patterns
+                                        </p>
+                                        <code>
+grep -e "man" -e "close" grepText.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+I saw a lame man
+close to my door.
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="container border border-dark py-3 mb-3">
+                                <h3>
+                                    <strong>head</strong> and <strong>tail</strong> Commands
+                                </h3>
+                                <hr>
+                                <p class="mt-4">
+                                    Consider the file <strong>headTail.txt</strong> containing the following lines:
+                                </p>
+                                <p>
+                                <pre>
+1 Anupam Samanta
+2 Srijani Ghosh
+3 Arijit Seal
+4 Ankit CSE
+5 Shuvam IT
+6 Mainak IT
+7 Amrita ECE
+8 Ankona ECE
+9 Sanjay IT
+10 Mrinal CSE
+11 Subarna EE
+                                </pre>
+                                </p>
+
+                                <ul class="list-group">
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays first 10 lines
+                                        </p>
+                                        <code>
+head headTail.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+1 Anupam Samanta
+2 Srijani Ghosh
+3 Arijit Seal
+4 Ankit CSE
+5 Shuvam IT
+6 Mainak IT
+7 Amrita ECE
+8 Ankona ECE
+9 Sanjay IT
+10 Mrinal CSE
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays last 10 lines
+                                        </p>
+                                        <code>
+head headTail.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+2 Srijani Ghosh
+3 Arijit Seal
+4 Ankit CSE
+5 Shuvam IT
+6 Mainak IT
+7 Amrita ECE
+8 Ankona ECE
+9 Sanjay IT
+10 Mrinal CSE
+11 Subarna EE
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays specified number of lines from the top (default 10 lines)
+                                        </p>
+                                        <code>
+head -4 headTail.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+1 Anupam Samanta
+2 Srijani Ghosh
+3 Arijit Seal
+4 Ankit CSE
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays specified number of lines from the bottom (default 10 lines)
+                                        </p>
+                                        <code>
+tail -3 headTail.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+9 Sanjay IT
+10 Mrinal CSE
+11 Subarna EE
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="container border border-dark py-3 mb-3">
+                                <h3>
+                                    <strong>cut</strong> Commands
+                                </h3>
+                                <hr>
+                                <p class="mt-4">
+                                    Consider the file <strong>states.txt</strong> containing the following lines:
+                                </p>
+                                <p>
+                                <pre>
+West Bengal
+Bihar
+Uttar Pradesh
+Haryana
+Karnataka
+                                </pre>
+                                </p>
+
+                                <ul class="list-group">
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            displays 1st 3rd and 5th bytes (characters) of each line
+                                        </p>
+                                        <code>
+cut -c 1,3,5 states.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+Ws
+Bhr
+Utr
+Hra
+Kra
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            3rd to 7th and 9th to 10th bytes (characters)
+                                        </p>
+                                        <code>
+cut -b 3-7,9-10 states.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+st Bega
+har
+tar Pad
+ryana
+rnataa
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <p>
+                                            space as delimiter and displaying 2nd field
+                                        </p>
+                                        <code>
+cut -d " " -f 2 states.txt
+                                </code>
+                                        <samp>
+                                            <pre class="m-0">
+Bengal
+Bihar
+Pradesh
+Haryana
+Karnataka
+                                    </pre>
+                                        </samp>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-2" aria-expanded="false">
+                            How to create a child process
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-2" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Using Fork function. A new process can be created by the <strong>fork()</strong> system
+                                call. The new process consists of a copy of the address space of the original process.
+                                <strong>fork()</strong> creates new process from existing process. Existing process is
+                                called the parent process and the process that is created newly is called child process.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-3" aria-expanded="false">
+                            <p class="m-0">When will <strong>rmdir</strong> fail to work?</p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-3" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                <strong>rmdir</strong> will fail to work when the directory is not empty.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-4" aria-expanded="false">
+                            <p class="m-10">What happens if we use <strong>cd</strong> without any argument?</p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-4" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                If we use <strong>cd</strong> without any argument then user will be returned to the
+                                <strong>home directory</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-5" aria-expanded="false">
+                            How to identify subdirectories in long listing of a directory?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-5" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                In the long listing of a directory, the <strong>d</strong> flag in permission part is
+                                used to indicate that it is a subdirectory of the patent ditectory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-6" aria-expanded="false">
+                            What is Orphan and Zombie process?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-6" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>Orphan process:</strong> An orphan process is a computer process whose
+                                    parent process has finished or terminated, though it remains running itself.
+                                </li>
+                                <li>
+                                    <strong>Zombie process:</strong> A zombie process is a process whose execution is
+                                    completed but it still has an entry in the process table. Zombie processes usually
+                                    occur for child processes, as the parent process still needs to read its child's
+                                    exit status. Once this is done using the wait system call, the zombie process is
+                                    eliminated from the process table. This is known as reaping the zombie process.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-7" aria-expanded="false">
+                            Difference between Orphan and Zombie process
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-7" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="container d-flex justify-content-center">
+                                <img src="./images/zombie-vs-orphan.png" class="img-fluid" alt="..." srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-8" aria-expanded="false">
+                            Events and Corresponding Signals
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-8" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="container d-flex justify-content-center">
+                                <img src="./images/events-and-corresponding-signals.png" class="img-fluid" alt="..."
+                                    srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-9" aria-expanded="false">
+                            <p class="m-0">Difference between <strong>SIGINT</strong> and <strong>SIGSTOP</strong></p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-9" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                            <ul>
+                                <li>
+                                    <strong>SIGINT</strong> is the signal interrupt produced when <kbd>ctrl</kbd> +
+                                    <kbd>C</kbd> is pressed.
+                                </li>
+                                <li>
+                                    <strong>SIGSTOP</strong> is the stop signal which causes a process to suspend its execution. This
+                                    signal is produced when <kbd>ctrl</kbd> + <kbd>Z</kbd> is pressed.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-10" aria-expanded="false">
+                            <p class="m-0">Write the use of <strong>execvp</strong> command</p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-10" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                When a program calls an exec function, that process immediately ceases executing that
+                                program and begins executing a new program from the beginning, assuming that the exec
+                                call does not encounter an error.
+                                <br>
+                                The exec type system calls allow a process to run any program files, which include a
+                                binary executable or a shell script.
+                                <br>
+                                Syntax:
+                                <code>
+                                    int execvp (const char *file, char *const argv[]);
+                                </code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-11" aria-expanded="false">
+                            What is Semaphore?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-11" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                            <ul>
+                                <li>
+                                    Semaphore is an integer variable that is shared between threads.
+                                </li>
+                                <li>
+                                    It is used to solve critical section problem and to achieve process synchronization
+                                    in the multiprocessing environment.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-12" aria-expanded="false">
+                            What are the two basic operations of Semaphore?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-12" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>The two basic operations are:
+                            <ol>
+                                <li>
+                                    <strong>wait()-</strong> decrements value of its arguments if it is greater than 0.
+                                    If less than or
+                                    equal to 0, then no operation is performed.
+                                </li>
+                                <li>
+                                    <strong>signal()-</strong> increments the value of its arguments.
+                                </li>
+                            </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-13" aria-expanded="false">
+                            Explain how Semaphores can lead to deadlock.
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-13" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                The implementation of Semaphore with a waiting queue may result in two or more processes
+                                waiting indefinitely for an event that can be caused only by one of the waiiting
+                                processes. When this state is reached, that process is said to be deadlocked.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-14" aria-expanded="false">
+                            <p class="m-0">Write the use of <strong>execv</strong></p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-14" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Using <strong>execv</strong> we can supply the path of a program as the first attribute.
+                                Therefore we can start that program terminating the current program.
+                            </p>
+                            <code>
+                                <pre>
+//A null terminated array of character pointers char
+*args[]={"./EXEC",NULL}; execv(args[0],args);
+
+/*All statements are ignored after execvp() call as this whole
+process(execDemo.c) is replaced by another process (EXEC.c)
+*/
+printf("Ending-----");
+
+return 0;
+                                </pre>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-15" aria-expanded="false">
+                            What is the difference between synchronous and asynchronous communication?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-15" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="container border p-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <b>Synchronous</b>
+                                    </div>
+                                    <div class="col-6">
+                                        <b>Asynchronous</b>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Transmitter and receiver works at the same clock.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Transmitter and receiver works at different clocks.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                There is no start and stop bits.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Start and stop bits are present and are used for synchronization.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Overhead is less.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Overhead is more.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                There is a common clock.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                There is no common clock.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Hardware is complex and expensive.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Hardware is cheap.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-16" aria-expanded="false">
+                            What is a pipe?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-16" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                            <ul>
+                                <li>
+                                    A pipe is a communication device that permits unidirection communication.
+                                </li>
+                                <li>
+                                    Pipes are serial devices. The data is always read from the pipe in the same order as
+                                    it was written.
+                                </li>
+                                <li>
+                                    Pipe is used to communicate between two threads in a single porcess or between
+                                    parent and child porcess.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-17" aria-expanded="false">
+                            What is the rule of reading from and writing into a pipe?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-17" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                            <ul>
+                                <li>
+                                    Data is written to "write end" of the pipe and is read back from the "read end"
+                                </li>
+                                <li>
+                                    Data is always read from the pipe in the same order as it was written.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-18" aria-expanded="false">
+                            How to create a Thread?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-18" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Using <strong>pthread_create</strong> function.
+                            </p>
+                            <code>
+                                    <pre>
+#include &#60stdio.h&#62
+#include &#60stdlib.h&#62
+#include &#60unistd.h&#62       //Header file for sleep(). man 3 sleep for details.
+#include &#60pthread.h&#62
+    
+// A normal C function that is executed as a thread 
+// when its name is specified in pthread_create()
+void *myThreadFun(void *vargp)
+{
+    sleep(1);
+    printf("Printing GeeksQuiz from Thread \n");
+    return NULL;
+}
+    
+int main()
+{
+    pthread_t thread_id;
+    printf("Before Thread\n");
+    pthread_create(&thread_id, NULL, myThreadFun, NULL);
+    pthread_join(thread_id, NULL);
+    printf("After Thread\n");
+    exit(0);
+}
+                                    </pre>
+                                </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse-19" aria-expanded="false">
+                            <p class="m-0">What is the use of <strong>pthread_join</strong></p>
+                        </button>
+                    </h2>
+                    <div id="flush-collapse-19" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                A program creates threads with the pthread_create function, it waits for them to
+                                terminate with the <strong>pthread_join</strong> function. <strong>pthread_join</strong>
+                                takes only two arguments: thread id to specify the waited thread and pointer to void*
+                                where exit status of the specified thread.If the user does not want to retrieve the exit
+                                code of the waited thread, NULL value should be passed as the second argument.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous">
+                    </script>
+</body>
+
+</html>
